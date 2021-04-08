@@ -12,20 +12,29 @@
     <div id="map" style="width: 100%; height: 100%; background: #888888;"></div>
 
     <script type="text/javascript">
+
         //Create layers
         var geograpihcal = L.tileLayer('maps/geographical/{z}/{x}/{y}.png', {
             noWrap: true
         });
-
         var political = L.tileLayer('maps/political/{z}/{x}/{y}.png', {
             noWrap: true
         });
+
         //Create Map
         var map = L.map('map', {
-            minZoom: 2,
+            minZoom: 0,
             maxZoom: 5,
             layers: [geograpihcal, political]
         }).setView([0, 0], 2);
+
+        //Add Layers Control
+        var baseMaps = {
+            "Geograpihcal": geograpihcal,
+            "Political": political
+        };
+        L.control.layers(baseMaps, null).addTo(map);
+
     </script>
 </body>
 
