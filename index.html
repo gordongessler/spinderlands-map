@@ -49,6 +49,29 @@
                 + 'Pixels: ' + map.project(locationFinder.getLatLng(), map.getMaxZoom()).toString()).openOn(map);
         });
 
+        //Add markers and assing popups
+        //Zir        
+        var zir_zir = L.marker(map.unproject([2579, 1439], map.getMaxZoom())).addTo(map);
+        zir_zir.bindPopup("Zir");
+
+        var zir_ziris = L.marker(map.unproject([2833, 1512], map.getMaxZoom())).addTo(map);
+        zir_ziris.bindPopup("Ziris");
+        
+        var zir_kharzim = L.marker(map.unproject([2381, 1230], map.getMaxZoom())).addTo(map);
+        zir_kharzim.bindPopup("Kharzim");
+        
+        var zir_rezma = L.marker(map.unproject([2328, 1961], map.getMaxZoom())).addTo(map);
+        zir_rezma.bindPopup("Rezma");
+        
+        var zir_kelrix = L.marker(map.unproject([3427, 1862], map.getMaxZoom())).addTo(map);
+        zir_kelrix.bindPopup("Kelrix");
+        
+        var zir_garut = L.marker(map.unproject([3124, 1140], map.getMaxZoom())).addTo(map);
+        zir_garut.bindPopup("Garut");
+        
+        var zir_teghad = L.marker(map.unproject([4172, 1681], map.getMaxZoom())).addTo(map);
+        zir_teghad.bindPopup("Teghad");
+
         //Add Layers Control
         var baseMaps = {
             "Geograpihcal": geograpihcal,
