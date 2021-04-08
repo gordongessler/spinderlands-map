@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="scripts/leaflet.css">
     <link rel="stylesheet" href="scripts/L.Control.Window.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="scripts/leaflet.js"></script>
     <script src="scripts/L.Control.Window.js"></script>
     <script src="scripts/jquery-3.6.0.js"></script>
@@ -71,15 +72,14 @@
         var zir_zir = L.marker(map.unproject([2768, 1808], map.getMaxZoom()), { icon: zirIcon }).addTo(regions);
         zir_zir.bindTooltip("Zir");
         zir_zir.on('click', function () {
-
             var win = L.control.window(map, {
                 title: 'Zir',
-                content: 'The Ziranthian dragonborn arrived in the desert as slaves, revolted against their opressors, and have established a advanced and erudite society. This tale of triumph is carried proudly in the in the heart of every dragonborn. Zir is protected by the Glass Dragons, knights clad in dragonglass armour, who vow to uphold the freedom and independence of the Zirantian people.They serve as guards to the city and towns, and patrol the distant borders of the desert.They guard the borders of the the Scale Valley especially well, watching closely for any hint that their Yuan- ti oppressors would return to enact their revenge.The Glass Dragons are trained in a secret monastery at the shores of Lake Memnor, high in the upper reaches of the Northern Spine.Here they commune in their dreams with their great liberator Brethezriass, the dragon who once delivered their people from slavery.Many young dragonborn travel to the town of Teghad in the hopes that they would be chosen to become Glass Dragons, and taken to the Lake Memnor. '
+                content: '<img src="images/Zir.png"><br />The Ziranthian dragonborn arrived in the desert as slaves, revolted against their opressors, and have established a advanced and erudite society. This tale of triumph is carried proudly in the in the heart of every dragonborn. Zir is protected by the Glass Dragons, knights clad in dragonglass armour, who vow to uphold the freedom and independence of the Zirantian people.They serve as guards to the city and towns, and patrol the distant borders of the desert.They guard the borders of the the Scale Valley especially well, watching closely for any hint that their Yuan- ti oppressors would return to enact their revenge.The Glass Dragons are trained in a secret monastery at the shores of Lake Memnor, high in the upper reaches of the Northern Spine.Here they commune in their dreams with their great liberator Brethezriass, the dragon who once delivered their people from slavery.Many young dragonborn travel to the town of Teghad in the hopes that they would be chosen to become Glass Dragons, and taken to the Lake Memnor. '
             }).show()
         });
 
         var zir_ziris = L.marker(map.unproject([2833, 1512], map.getMaxZoom())).addTo(cities);
-        zir_ziris.bindPopup("<b>Ziris</b><br /> The capital city of Zir. Ruled by the council of seven. Home to the Clarion Archives<br /><a id='ziris' href='#''>Test</a>");
+        zir_ziris.bindPopup("<b>Ziris</b><br /> The capital city of Zir. Ruled by the council of seven. Home to the Clarion Archives<br /><a id='ziris' class='infoWindow' href='#''>Read more...</a>");
         zir_ziris.bindTooltip("Ziris");
 
         var zir_kharzim = L.marker(map.unproject([2381, 1230], map.getMaxZoom())).addTo(cities);
@@ -102,7 +102,8 @@
         zir_teghad.bindPopup("Teghad");
         zir_teghad.bindTooltip("Teghad");
 
-        //Create windows
+        //Create windows with content for some markers
+        //This feels hacky and I don't like it. It works so far but I will probably replace it if I figure out how.
         map.on('popupopen', function () {
             $('#ziris').click(function () {
 
