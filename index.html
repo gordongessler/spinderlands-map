@@ -29,6 +29,15 @@
             layers: [geograpihcal, political]
         }).setView([0, 0], 2);
 
+        //Add coordinate finding marker 
+        var locationFinder = L.marker([0, 0], {
+            draggable: true
+        }).addTo(map);
+        locationFinder.bindPopup("Use me to find coordinates").openPopup();
+        locationFinder.on('dragend', function (e) {
+            locationFinder.getPopup().setContent(locationFinder.getLatLng().toString()).openOn(map);
+        });
+
         //Add Layers Control
         var baseMaps = {
             "Geograpihcal": geograpihcal,
