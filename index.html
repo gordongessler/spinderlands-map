@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="scripts/L.Control.Window.css" />
     <script src="scripts/leaflet.js"></script>
     <script src="scripts/L.Control.Window.js"></script>
-    <script src="jquery-3.6.0.js"></script>
+    <script src="scripts/jquery-3.6.0.js"></script>
 </head>
 
 <body style="height: 100%;margin: 0;">
@@ -58,7 +58,7 @@
 
             iconSize: [81, 85],
             iconAnchor: [20, 85],
-            popupAnchor: [20, -85], 
+            popupAnchor: [20, -85],
             tooltipAnchor: [20, -40]
         });
 
@@ -73,7 +73,7 @@
         zir_zir.bindTooltip("Zir");
 
         var zir_ziris = L.marker(map.unproject([2833, 1512], map.getMaxZoom())).addTo(cities);
-        zir_ziris.bindPopup("Ziris");
+        zir_ziris.bindPopup("<b>Ziris</b><br /> The capital city of Zir. Ruled by the council of seven. Home to the Clarion Archives<br /><a id='ziris' href='#''>Test</a>");
         zir_ziris.bindTooltip("Ziris");
 
         var zir_kharzim = L.marker(map.unproject([2381, 1230], map.getMaxZoom())).addTo(cities);
@@ -95,6 +95,18 @@
         var zir_teghad = L.marker(map.unproject([4172, 1681], map.getMaxZoom())).addTo(cities);
         zir_teghad.bindPopup("Teghad");
         zir_teghad.bindTooltip("Teghad");
+
+        //Create windows
+        map.on('popupopen', function () {
+            $('#ziris').click(function () {
+                
+                var win =  L.control.window(map,{
+                    title:'The great glass city of Ziris',
+                    content:'The great glass city of Ziris, Jewel of the Desert, is the seat of the Council of Seven, the ruling organisation of Zir. The Council is made up of the seven wisest and most powerful wizards in Zir, and they rule the desert nation on principles of rationality and knowledge. Ziris is home to the Clarion Archives, rumoured to be the greatest library in the civilised world. The Council holds that this library is to be the definitive repository of all that is known. Legions of scribes and scholars work tirelessly to asymptotically converge upon this noble objective. Recently the Council has ruled allow outsiders to contribute to the Archives by constructing Obsidian Lyceums in other nations, places of research and instruction in Ziranthian arcanism.'
+                }).show()
+                
+            });
+        });
 
         //Create layer groups
         var baseLayers = {
