@@ -1,7 +1,7 @@
 An interactive map of Spiderlands
 
 # To-do:
-  - [ ] Add window controlls
+  - [X] Add window controlls
   - [ ] Create template for popouts and windows
   - [ ] Drawable polylines
   - [ ] Different maps at different zoom levels
