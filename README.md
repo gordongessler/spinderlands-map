@@ -1,13 +1,20 @@
-This document contains random tasks and ideas I come up with during working on this project as well as links to various resources i use
+An interactive map of Collabris
+
 # To-do:
   - [ ] Add window controlls
   - [ ] Create template for popouts and windows
+  - [ ] Drawable polylines
+  - [ ] Different maps at different zoom levels
+  - [ ] Themathic map markers
+  - [ ] Search button (?)
+  - [ ] Scale bar
 # Links
 ## Tutorials
 * https://joshuafrazier.info/leaflet-basics/
 * https://www.tutorialspoint.com/leafletjs/leafletjs_quick_guide.htm
 * https://maptimeboston.github.io/leaflet-intro/
 * https://leafletjs.com/examples.html
+* https://youtube.com/playlist?list=PLGB6RkFB7ZmPCPfuoZZI_r_7w0wSok79M
 ## Plugins, resources and documentation
 * https://github.com/mapshakers/leaflet-control-window
 * https://github.com/bbecquet/Leaflet.PolylineDecorator
@@ -22,3 +29,5 @@ This document contains random tasks and ideas I come up with during working on t
 * https://leafletjs.com/
   * https://leafletjs.com/reference-1.7.1.html
   * https://leafletjs.com/plugins.html
+## Example maps for refernce
+* http://talesofrokugan.com/map/
