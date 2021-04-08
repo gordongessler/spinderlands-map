@@ -59,7 +59,7 @@
             tooltipAnchor: [20, -40]
         });
 
-        //Add markers and assing popups
+        //Add markers and assing popups and tooltips
         //Create marker groups
         var cities = L.layerGroup();
         var regions = L.layerGroup();
@@ -67,24 +67,31 @@
         //Zir        
         var zir_zir = L.marker(map.unproject([2768, 1808], map.getMaxZoom()), { icon: zirIcon }).addTo(regions);
         zir_zir.bindPopup("Zir");
+        zir_zir.bindTooltip("Zir");
 
         var zir_ziris = L.marker(map.unproject([2833, 1512], map.getMaxZoom())).addTo(cities);
         zir_ziris.bindPopup("Ziris");
+        zir_ziris.bindTooltip("Ziris");
 
         var zir_kharzim = L.marker(map.unproject([2381, 1230], map.getMaxZoom())).addTo(cities);
         zir_kharzim.bindPopup("Kharzim");
+        zir_kharzim.bindTooltip("Kharzim");
 
         var zir_rezma = L.marker(map.unproject([2328, 1961], map.getMaxZoom())).addTo(cities);
         zir_rezma.bindPopup("Rezma");
+        zir_rezma.bindTooltip("Rezma");
 
         var zir_kelrix = L.marker(map.unproject([3427, 1862], map.getMaxZoom())).addTo(cities);
         zir_kelrix.bindPopup("Kelrix");
+        zir_kelrix.bindTooltip("Kelrix");
 
         var zir_garut = L.marker(map.unproject([3124, 1140], map.getMaxZoom())).addTo(cities);
         zir_garut.bindPopup("Garut");
+        zir_garut.bindTooltip("Garut");
 
         var zir_teghad = L.marker(map.unproject([4172, 1681], map.getMaxZoom())).addTo(cities);
         zir_teghad.bindPopup("Teghad");
+        zir_teghad.bindTooltip("Teghad");
 
         //Create layer groups
         var baseLayers = {
