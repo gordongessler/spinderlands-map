@@ -4,6 +4,7 @@
 <head>
     <title>Spinderlands Interactive Map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="scripts/leaflet.css">
     <script src="scripts/leaflet.js"></script>
 </head>
@@ -50,34 +51,45 @@
         });
 
         //Add markers and assing popups
+        //Create marker groups
+        var cities = L.layerGroup();
         //Zir        
-        var zir_zir = L.marker(map.unproject([2579, 1439], map.getMaxZoom())).addTo(map);
+        var zir_zir = L.marker(map.unproject([2579, 1439], map.getMaxZoom())).addTo(cities);
         zir_zir.bindPopup("Zir");
 
-        var zir_ziris = L.marker(map.unproject([2833, 1512], map.getMaxZoom())).addTo(map);
+        var zir_ziris = L.marker(map.unproject([2833, 1512], map.getMaxZoom())).addTo(cities);
         zir_ziris.bindPopup("Ziris");
-        
-        var zir_kharzim = L.marker(map.unproject([2381, 1230], map.getMaxZoom())).addTo(map);
-        zir_kharzim.bindPopup("Kharzim");
-        
-        var zir_rezma = L.marker(map.unproject([2328, 1961], map.getMaxZoom())).addTo(map);
-        zir_rezma.bindPopup("Rezma");
-        
-        var zir_kelrix = L.marker(map.unproject([3427, 1862], map.getMaxZoom())).addTo(map);
-        zir_kelrix.bindPopup("Kelrix");
-        
-        var zir_garut = L.marker(map.unproject([3124, 1140], map.getMaxZoom())).addTo(map);
-        zir_garut.bindPopup("Garut");
-        
-        var zir_teghad = L.marker(map.unproject([4172, 1681], map.getMaxZoom())).addTo(map);
-        zir_teghad.bindPopup("Teghad");
 
-        //Add Layers Control
-        var baseMaps = {
+        var zir_kharzim = L.marker(map.unproject([2381, 1230], map.getMaxZoom())).addTo(cities);
+        zir_kharzim.bindPopup("Kharzim");
+
+        var zir_rezma = L.marker(map.unproject([2328, 1961], map.getMaxZoom())).addTo(cities);
+        zir_rezma.bindPopup("Rezma");
+
+        var zir_kelrix = L.marker(map.unproject([3427, 1862], map.getMaxZoom())).addTo(cities);
+        zir_kelrix.bindPopup("Kelrix");
+
+        var zir_garut = L.marker(map.unproject([3124, 1140], map.getMaxZoom())).addTo(cities);
+        zir_garut.bindPopup("Garut");
+
+        var zir_teghad = L.marker(map.unproject([4172, 1681], map.getMaxZoom())).addTo(cities);
+        zir_teghad.bindPopup("Teghad");
+        
+        //Create layer groups
+        var baseLayers = {
             "Geograpihcal": geograpihcal,
             "Political": political
-        };
-        L.control.layers(baseMaps, null).addTo(map);
+        },
+            overlays = {
+                "Regions": zir_zir,
+                "Cities": cities
+            };
+            
+        //Display marker groups
+        cities.addTo(map);
+
+        //Add Layers Control
+        L.control.layers(baseLayers, overlays).addTo(map);
 
     </script>
 </body>
