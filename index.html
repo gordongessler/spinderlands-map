@@ -55,7 +55,8 @@
 
             iconSize: [81, 85],
             iconAnchor: [20, 85],
-            popupAnchor: [20, -85] 
+            popupAnchor: [20, -85], 
+            tooltipAnchor: [20, -40]
         });
 
         //Add markers and assing popups
@@ -64,7 +65,7 @@
         var regions = L.layerGroup();
 
         //Zir        
-        var zir_zir = L.marker(map.unproject([2768, 1808], map.getMaxZoom()), {icon: zirIcon}).addTo(regions);
+        var zir_zir = L.marker(map.unproject([2768, 1808], map.getMaxZoom()), { icon: zirIcon }).addTo(regions);
         zir_zir.bindPopup("Zir");
 
         var zir_ziris = L.marker(map.unproject([2833, 1512], map.getMaxZoom())).addTo(cities);
