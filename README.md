@@ -8,6 +8,7 @@ An interactive map of Spiderlands
   - [ ] Themathic map markers
   - [ ] Search button (?)
   - [ ] Scale bar
+  - [ ] Hex grid overlay 
 # Links
 ## Tutorials
 * https://joshuafrazier.info/leaflet-basics/
@@ -15,6 +16,7 @@ An interactive map of Spiderlands
 * https://maptimeboston.github.io/leaflet-intro/
 * https://leafletjs.com/examples.html
 * https://youtube.com/playlist?list=PLGB6RkFB7ZmPCPfuoZZI_r_7w0wSok79M
+* https://youtube.com/playlist?list=PLGHe6Moaz52PUNP4DtIshALDogSURIlYB
 ## Plugins, resources and documentation
 * https://github.com/mapshakers/leaflet-control-window
 * https://github.com/bbecquet/Leaflet.PolylineDecorator
