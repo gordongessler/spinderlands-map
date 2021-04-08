@@ -1,4 +1,4 @@
-An interactive map of Collabris
+An interactive map of Spiderlands
 
 # To-do:
   - [ ] Add window controlls
