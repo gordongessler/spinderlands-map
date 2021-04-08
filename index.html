@@ -61,8 +61,10 @@
         //Add markers and assing popups
         //Create marker groups
         var cities = L.layerGroup();
+        var regions = L.layerGroup();
+
         //Zir        
-        var zir_zir = L.marker(map.unproject([2768, 1808], map.getMaxZoom()), {icon: zirIcon});
+        var zir_zir = L.marker(map.unproject([2768, 1808], map.getMaxZoom()), {icon: zirIcon}).addTo(regions);
         zir_zir.bindPopup("Zir");
 
         var zir_ziris = L.marker(map.unproject([2833, 1512], map.getMaxZoom())).addTo(cities);
@@ -89,11 +91,12 @@
             "Political": political
         },
             overlays = {
-                "Regions": zir_zir,
+                "Regions": regions,
                 "Cities": cities
             };
 
         //Display marker groups
+        regions.addTo(map);
         cities.addTo(map);
 
         //Add Layers Control
