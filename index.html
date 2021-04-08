@@ -69,8 +69,14 @@
 
         //Zir        
         var zir_zir = L.marker(map.unproject([2768, 1808], map.getMaxZoom()), { icon: zirIcon }).addTo(regions);
-        zir_zir.bindPopup("Zir");
         zir_zir.bindTooltip("Zir");
+        zir_zir.on('click', function () {
+
+            var win = L.control.window(map, {
+                title: 'Zir',
+                content: 'The Ziranthian dragonborn arrived in the desert as slaves, revolted against their opressors, and have established a advanced and erudite society. This tale of triumph is carried proudly in the in the heart of every dragonborn. Zir is protected by the Glass Dragons, knights clad in dragonglass armour, who vow to uphold the freedom and independence of the Zirantian people.They serve as guards to the city and towns, and patrol the distant borders of the desert.They guard the borders of the the Scale Valley especially well, watching closely for any hint that their Yuan- ti oppressors would return to enact their revenge.The Glass Dragons are trained in a secret monastery at the shores of Lake Memnor, high in the upper reaches of the Northern Spine.Here they commune in their dreams with their great liberator Brethezriass, the dragon who once delivered their people from slavery.Many young dragonborn travel to the town of Teghad in the hopes that they would be chosen to become Glass Dragons, and taken to the Lake Memnor. '
+            }).show()
+        });
 
         var zir_ziris = L.marker(map.unproject([2833, 1512], map.getMaxZoom())).addTo(cities);
         zir_ziris.bindPopup("<b>Ziris</b><br /> The capital city of Zir. Ruled by the council of seven. Home to the Clarion Archives<br /><a id='ziris' href='#''>Test</a>");
@@ -99,12 +105,13 @@
         //Create windows
         map.on('popupopen', function () {
             $('#ziris').click(function () {
-                
-                var win =  L.control.window(map,{
-                    title:'The great glass city of Ziris',
-                    content:'The great glass city of Ziris, Jewel of the Desert, is the seat of the Council of Seven, the ruling organisation of Zir. The Council is made up of the seven wisest and most powerful wizards in Zir, and they rule the desert nation on principles of rationality and knowledge. Ziris is home to the Clarion Archives, rumoured to be the greatest library in the civilised world. The Council holds that this library is to be the definitive repository of all that is known. Legions of scribes and scholars work tirelessly to asymptotically converge upon this noble objective. Recently the Council has ruled allow outsiders to contribute to the Archives by constructing Obsidian Lyceums in other nations, places of research and instruction in Ziranthian arcanism.'
+
+                var win = L.control.window(map, {
+                    maxWidth: 400,
+                    title: 'The great glass city of Ziris',
+                    content: 'The great glass city of Ziris, Jewel of the Desert, is the seat of the Council of Seven, the ruling organisation of Zir. The Council is made up of the seven wisest and most powerful wizards in Zir, and they rule the desert nation on principles of rationality and knowledge. Ziris is home to the Clarion Archives, rumoured to be the greatest library in the civilised world. The Council holds that this library is to be the definitive repository of all that is known. Legions of scribes and scholars work tirelessly to asymptotically converge upon this noble objective. Recently the Council has ruled allow outsiders to contribute to the Archives by constructing Obsidian Lyceums in other nations, places of research and instruction in Ziranthian arcanism.'
                 }).show()
-                
+
             });
         });
 
