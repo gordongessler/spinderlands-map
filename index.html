@@ -79,7 +79,7 @@
         });
 
         var zir_ziris = L.marker(map.unproject([2833, 1512], map.getMaxZoom())).addTo(cities);
-        zir_ziris.bindPopup("<b>Ziris</b><br /> The capital city of Zir. Ruled by the council of seven. Home to the Clarion Archives<br /><a id='ziris' class='infoWindow' href='#''>Read more...</a>");
+        zir_ziris.bindPopup("<b>Ziris</b><br /> The capital city of Zir. Ruled by the council of seven. Home to the Clarion Archives<button id='ziris'>Read more...</a>");
         zir_ziris.bindTooltip("Ziris");
 
         var zir_kharzim = L.marker(map.unproject([2381, 1230], map.getMaxZoom())).addTo(cities);
