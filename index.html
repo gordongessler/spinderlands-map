@@ -116,6 +116,7 @@
         var bogmireCityMarker = L.ExtraMarkers.icon({
             icon: 'fa-fort-awesome',
             markerColor: 'white',
+            iconColor: 'black',
             shape: 'penta',
             prefix: 'fa'
         });
@@ -123,6 +124,31 @@
         var bogmireTownMarker = L.ExtraMarkers.icon({
             icon: 'fa-home',
             markerColor: 'white',
+            iconColor: 'black',
+            shape: 'circle',
+            prefix: 'fa'
+        });
+
+        //Ardenia
+        var ardeniaIcon = L.icon({
+            iconUrl: 'images/Ardenia.png',
+
+            iconSize: [81, 95],
+            iconAnchor: [20, 95],
+            popupAnchor: [20, -95],
+            tooltipAnchor: [20, -40]
+        });
+
+        var ardeniaCityMarker = L.ExtraMarkers.icon({
+            icon: 'fa-fort-awesome',
+            markerColor: 'yellow',
+            shape: 'penta',
+            prefix: 'fa'
+        });
+
+        var ardeniaTownMarker = L.ExtraMarkers.icon({
+            icon: 'fa-home',
+            markerColor: 'yellow',
             shape: 'circle',
             prefix: 'fa'
         });
@@ -177,11 +203,44 @@
             }).show()
         });
 
-        /*
-        var zir_ziris = L.marker(map.unproject([2541, 912], map.getMaxZoom()), { icon: zirCityMarker }).addTo(cities);
-        zir_ziris.bindPopup("<b>Ziris</b><br /> The capital city of Zir. Ruled by the council of seven. Home to the Clarion Archives<button id='ziris'>Read more...</a>");
-        zir_ziris.bindTooltip("Ziris");
-        */
+        var bogmire_bobbernet = L.marker(map.unproject([5617, 1397], map.getMaxZoom()), { icon: bogmireCityMarker }).addTo(cities);
+        bogmire_bobbernet.bindPopup("<b>Bobbernet</b><br /> The capital city of Bogmire."); /*Ruled by the council of seven. Home to the Clarion Archives<button id='ziris'>Read more...</a>");
+            */
+        bogmire_bobbernet.bindTooltip("Bobbernet");
+
+        //Ardenia        
+        var ardenia_ardenia = L.marker(map.unproject([4672, 2324], map.getMaxZoom()), { icon: ardeniaIcon }).addTo(heraldry);
+        ardenia_ardenia.bindTooltip("Bogmire");
+        ardenia_ardenia.on('click', function () {
+            var win = L.control.window(map, {
+                title: 'Bogmire',
+                content: '<img src="images/Ardenia.png"><br />'
+            }).show()
+        });
+
+        var ardenia_ardenfort = L.marker(map.unproject([4819, 1803], map.getMaxZoom()), { icon: ardeniaCityMarker }).addTo(cities);
+        ardenia_ardenfort.bindPopup("Ardenfort");
+        ardenia_ardenfort.bindTooltip("Ardenfort");
+
+        var ardenia_castor = L.marker(map.unproject([5177, 1723], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns);
+        ardenia_castor.bindPopup("Castor");
+        ardenia_castor.bindTooltip("Castor");
+
+        var ardenia_oakshadow = L.marker(map.unproject([4628, 2018], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns);
+        ardenia_oakshadow.bindPopup("Oakshadow");
+        ardenia_oakshadow.bindTooltip("Oakshadow");
+
+        var ardenia_fallworth = L.marker(map.unproject([4371, 2152], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns);
+        ardenia_fallworth.bindPopup("Fallworth");
+        ardenia_fallworth.bindTooltip("Fallworth");
+
+        var ardenia_mistwater = L.marker(map.unproject([3942, 1849], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns);
+        ardenia_mistwater.bindPopup("Mistwater");
+        ardenia_mistwater.bindTooltip("Mistwater");
+
+        var ardenia_Greenrest = L.marker(map.unproject([4981, 2316], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns);
+        ardenia_Greenrest.bindPopup("Greenrest");
+        ardenia_Greenrest.bindTooltip("Greenrest");
 
         //Create windows with content for some markers
         //This feels hacky and I don't like it. It works so far but I will probably replace it if I figure out how.
