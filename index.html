@@ -11,6 +11,8 @@
     <script src="scripts/L.Control.Window.js"></script>
     <link rel="stylesheet" href="scripts/leaflet.extra-markers.min.css">
     <script src="scripts/leaflet.extra-markers.min.js"></script>
+    <link rel="stylesheet" href="scripts/leaflet.groupedlayercontrol.min.css">
+    <script src="scripts/leaflet.groupedlayercontrol.min.js"></script>
     <script src="scripts/jquery-3.6.0.js"></script>
     <script src="https://kit.fontawesome.com/8275689564.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css" />
@@ -156,24 +158,30 @@
         var baseLayers = {
             "Grayscale": grayscale,
             "Clean": clean
-        },
-            overlays = {
-                "Regions": regions,
-                "Cities": cities,
-                "Towns": towns,
-                "Territories": territories,
-                "Labels": labels,
+        };
+        var groupedOverlays = {
+            "Map overlays": {
                 "Hex overlay": hex,
                 "Wind Rose": wind_rose,
-            };
-
+            },
+            "Political": {
+                "Regions": regions,
+                "Territories": territories,
+                "Labels": labels,
+            },
+            "Points of Interest": {
+                "Cities": cities,
+                "Towns": towns,
+            }
+        };
         //Display marker groups
-        regions.addTo(map);
         cities.addTo(map);
-        towns.addTo(map);
 
-        //Add Layers Control
-        L.control.layers(baseLayers, overlays).addTo(map);
+        //Add Grouped Layers Control
+        L.control.groupedLayers(baseLayers, groupedOverlays, {
+            exclusiveGroups: ["Map overlays"],
+            groupCheckboxes: true
+        }).addTo(map);
 
     </script>
 </body>

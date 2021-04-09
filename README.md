@@ -16,6 +16,7 @@ An interactive map of Spinelands
 * [Leaflet](https://leafletjs.com/)
 * [Window Control plugin for Leaflet](https://github.com/mapshakers/leaflet-control-window)
 * [Extra Markers plugin for Leaflet](https://github.com/coryasilva/Leaflet.ExtraMarkers)
+* [Grouped Layer Control plugin for Leaflet](https://github.com/ismyrnow/leaflet-groupedlayercontrol)
 * [Font Awesome](https://fontawesome.com/)
 * [jQuery](https://jquery.com/)
 
