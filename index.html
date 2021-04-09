@@ -17,7 +17,7 @@
 </head>
 
 <body style="height: 100%;margin: 0;">
-    <div id="map" style="width: 100%; height: 100%; background: #888888;"></div>
+    <div id="map" style="width: 100%; height: 100%; background: #fcfcfc;"></div>
 
     <script type="text/javascript">
         //Create layers
@@ -27,13 +27,16 @@
         var political = L.tileLayer('maps/political/{z}/{x}/{y}.png', {
             noWrap: true
         });
+        var clean = L.tileLayer('maps/clean/{z}/{x}/{y}.png', {
+            noWrap: true
+        });
 
         //Create Map
         var map = L.map('map', {
-            minZoom: 0,
+            minZoom: 1,
             maxZoom: 5,
             attributionControl: false,
-            layers: [geograpihcal, political],
+            layers: [geograpihcal, political, clean],
             //I'm not sure why I'm using simple CRS but the tutorials said to do it and I want to work on content so I will revisit this later
             crs: L.CRS.Simple
         }).setView([0, 0], 2);
@@ -137,6 +140,7 @@
 
         //Create layer groups
         var baseLayers = {
+            "Clean":clean,
             "Geograpihcal": geograpihcal,
             "Political": political
         },
