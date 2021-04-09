@@ -70,7 +70,7 @@
         var zirCityMarker = L.ExtraMarkers.icon({
             icon: 'fa-fort-awesome',
             markerColor: 'orange',
-            shape: 'circle',
+            shape: 'penta',
             prefix: 'fa'
         });
 
@@ -84,6 +84,7 @@
         //Add markers and assing popups and tooltips
         //Create marker groups
         var cities = L.layerGroup();
+        var towns = L.layerGroup();
         var regions = L.layerGroup();
 
         //Zir        
@@ -100,23 +101,23 @@
         zir_ziris.bindPopup("<b>Ziris</b><br /> The capital city of Zir. Ruled by the council of seven. Home to the Clarion Archives<button id='ziris'>Read more...</a>");
         zir_ziris.bindTooltip("Ziris");
 
-        var zir_kharzim = L.marker(map.unproject([2381, 1230], map.getMaxZoom()), {icon: zirTownMarker}).addTo(cities);
+        var zir_kharzim = L.marker(map.unproject([2381, 1230], map.getMaxZoom()), {icon: zirTownMarker}).addTo(towns);
         zir_kharzim.bindPopup("Kharzim");
         zir_kharzim.bindTooltip("Kharzim");
 
-        var zir_rezma = L.marker(map.unproject([2328, 1961], map.getMaxZoom()), {icon: zirTownMarker}).addTo(cities);
+        var zir_rezma = L.marker(map.unproject([2328, 1961], map.getMaxZoom()), {icon: zirTownMarker}).addTo(towns);
         zir_rezma.bindPopup("Rezma");
         zir_rezma.bindTooltip("Rezma");
 
-        var zir_kelrix = L.marker(map.unproject([3427, 1862], map.getMaxZoom()), {icon: zirTownMarker}).addTo(cities);
+        var zir_kelrix = L.marker(map.unproject([3427, 1862], map.getMaxZoom()), {icon: zirTownMarker}).addTo(towns);
         zir_kelrix.bindPopup("Kelrix");
         zir_kelrix.bindTooltip("Kelrix");
 
-        var zir_garut = L.marker(map.unproject([3124, 1140], map.getMaxZoom()), {icon: zirTownMarker}).addTo(cities);
+        var zir_garut = L.marker(map.unproject([3124, 1140], map.getMaxZoom()), {icon: zirTownMarker}).addTo(towns);
         zir_garut.bindPopup("Garut");
         zir_garut.bindTooltip("Garut");
 
-        var zir_teghad = L.marker(map.unproject([4172, 1681], map.getMaxZoom()), {icon: zirTownMarker}).addTo(cities);
+        var zir_teghad = L.marker(map.unproject([4172, 1681], map.getMaxZoom()), {icon: zirTownMarker}).addTo(towns);
         zir_teghad.bindPopup("Teghad");
         zir_teghad.bindTooltip("Teghad");
 
@@ -141,12 +142,14 @@
         },
             overlays = {
                 "Regions": regions,
-                "Cities": cities
+                "Cities": cities,
+                "Towns": towns
             };
 
         //Display marker groups
         regions.addTo(map);
         cities.addTo(map);
+        towns.addTo(map);
 
         //Add Layers Control
         L.control.layers(baseLayers, overlays).addTo(map);
