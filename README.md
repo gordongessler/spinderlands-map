@@ -1,4 +1,4 @@
-An interactive map of Spiderlands
+An interactive map of Spinelands
 
 # To-do:
   - [X] Add window controlls
