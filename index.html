@@ -21,13 +21,27 @@
 
     <script type="text/javascript">
         //Create layers
-        var geograpihcal = L.tileLayer('maps/geographical/{z}/{x}/{y}.png', {
-            noWrap: true
-        });
-        var political = L.tileLayer('maps/political/{z}/{x}/{y}.png', {
-            noWrap: true
-        });
         var clean = L.tileLayer('maps/clean/{z}/{x}/{y}.png', {
+            noWrap: true
+        });
+
+        var grayscale = L.tileLayer('maps/grayscale/{z}/{x}/{y}.png', {
+            noWrap: true
+        });
+
+        var territories = L.tileLayer('maps/territories/{z}/{x}/{y}.png', {
+            noWrap: true
+        });
+
+        var labels = L.tileLayer('maps/labels/{z}/{x}/{y}.png', {
+            noWrap: true
+        });
+
+        var hex = L.tileLayer('maps/hex/{z}/{x}/{y}.png', {
+            noWrap: true
+        });
+
+        var wind_rose = L.tileLayer('maps/wind_rose/{z}/{x}/{y}.png', {
             noWrap: true
         });
 
@@ -36,14 +50,14 @@
             minZoom: 1,
             maxZoom: 5,
             attributionControl: false,
-            layers: [geograpihcal, political, clean],
+            layers: [clean, grayscale],
             //I'm not sure why I'm using simple CRS but the tutorials said to do it and I want to work on content so I will revisit this later
             crs: L.CRS.Simple
         }).setView([0, 0], 2);
 
         //Set bounds for the map
-        var mapSW = [0, 8192],
-            mapNE = [8192, 0];
+        var mapSW = [944, 8192],
+            mapNE = [7248, 0];
 
         map.setMaxBounds(new L.LatLngBounds(
             map.unproject(mapSW, map.getMaxZoom()),
@@ -100,27 +114,27 @@
             }).show()
         });
 
-        var zir_ziris = L.marker(map.unproject([2833, 1512], map.getMaxZoom()), {icon: zirCityMarker}).addTo(cities);
+        var zir_ziris = L.marker(map.unproject([2833, 1512], map.getMaxZoom()), { icon: zirCityMarker }).addTo(cities);
         zir_ziris.bindPopup("<b>Ziris</b><br /> The capital city of Zir. Ruled by the council of seven. Home to the Clarion Archives<button id='ziris'>Read more...</a>");
         zir_ziris.bindTooltip("Ziris");
 
-        var zir_kharzim = L.marker(map.unproject([2381, 1230], map.getMaxZoom()), {icon: zirTownMarker}).addTo(towns);
+        var zir_kharzim = L.marker(map.unproject([2381, 1230], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns);
         zir_kharzim.bindPopup("Kharzim");
         zir_kharzim.bindTooltip("Kharzim");
 
-        var zir_rezma = L.marker(map.unproject([2328, 1961], map.getMaxZoom()), {icon: zirTownMarker}).addTo(towns);
+        var zir_rezma = L.marker(map.unproject([2328, 1961], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns);
         zir_rezma.bindPopup("Rezma");
         zir_rezma.bindTooltip("Rezma");
 
-        var zir_kelrix = L.marker(map.unproject([3427, 1862], map.getMaxZoom()), {icon: zirTownMarker}).addTo(towns);
+        var zir_kelrix = L.marker(map.unproject([3427, 1862], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns);
         zir_kelrix.bindPopup("Kelrix");
         zir_kelrix.bindTooltip("Kelrix");
 
-        var zir_garut = L.marker(map.unproject([3124, 1140], map.getMaxZoom()), {icon: zirTownMarker}).addTo(towns);
+        var zir_garut = L.marker(map.unproject([3124, 1140], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns);
         zir_garut.bindPopup("Garut");
         zir_garut.bindTooltip("Garut");
 
-        var zir_teghad = L.marker(map.unproject([4172, 1681], map.getMaxZoom()), {icon: zirTownMarker}).addTo(towns);
+        var zir_teghad = L.marker(map.unproject([4172, 1681], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns);
         zir_teghad.bindPopup("Teghad");
         zir_teghad.bindTooltip("Teghad");
 
@@ -140,14 +154,17 @@
 
         //Create layer groups
         var baseLayers = {
-            "Clean":clean,
-            "Geograpihcal": geograpihcal,
-            "Political": political
+            "Grayscale": grayscale,
+            "Clean": clean
         },
             overlays = {
                 "Regions": regions,
                 "Cities": cities,
-                "Towns": towns
+                "Towns": towns,
+                "Territories": territories,
+                "Labels": labels,
+                "Hex overlay": hex,
+                "Wind Rose": wind_rose,
             };
 
         //Display marker groups

@@ -10,6 +10,8 @@ An interactive map of Spinelands
   - [ ] Scale bar
   - [ ] Hex grid overlay 
   - [ ] add licence information (and credit used tools/otherwise comply with their licenses)
+  - [ ] add python script info
+  - [ ] group layer control
 # Libraries/resources used
 * [Leaflet](https://leafletjs.com/)
 * [Window Control plugin for Leaflet](https://github.com/mapshakers/leaflet-control-window)
@@ -42,3 +44,4 @@ An interactive map of Spinelands
   * https://leafletjs.com/plugins.html
 ## Example maps for refernce
 * http://talesofrokugan.com/map/
+* https://github.com/danizen/campaign-map
