@@ -153,6 +153,30 @@
             prefix: 'fa'
         });
 
+        //Haldrim
+        var haldrimIcon = L.icon({
+            iconUrl: 'images/Haldrim.png',
+
+            iconSize: [81, 95],
+            iconAnchor: [20, 95],
+            popupAnchor: [20, -95],
+            tooltipAnchor: [20, -40]
+        });
+
+        var haldrimCityMarker = L.ExtraMarkers.icon({
+            icon: 'fa-fort-awesome',
+            markerColor: 'blue-dark',
+            shape: 'penta',
+            prefix: 'fa'
+        });
+
+        var haldrimTownMarker = L.ExtraMarkers.icon({
+            icon: 'fa-home',
+            markerColor: 'blue-dark',
+            shape: 'circle',
+            prefix: 'fa'
+        });
+
         //Add markers and assing popups and tooltips
         //Create marker groups
         var cities = L.layerGroup();
@@ -210,10 +234,10 @@
 
         //Ardenia        
         var ardenia_ardenia = L.marker(map.unproject([4672, 2324], map.getMaxZoom()), { icon: ardeniaIcon }).addTo(heraldry);
-        ardenia_ardenia.bindTooltip("Bogmire");
+        ardenia_ardenia.bindTooltip("Ardenia");
         ardenia_ardenia.on('click', function () {
             var win = L.control.window(map, {
-                title: 'Bogmire',
+                title: 'Ardenia',
                 content: '<img src="images/Ardenia.png"><br />'
             }).show()
         });
@@ -241,6 +265,40 @@
         var ardenia_Greenrest = L.marker(map.unproject([4981, 2316], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns);
         ardenia_Greenrest.bindPopup("Greenrest");
         ardenia_Greenrest.bindTooltip("Greenrest");
+
+        //Haldrim
+        var haldrim_haldrim = L.marker(map.unproject([4397, 4009], map.getMaxZoom()), { icon: haldrimIcon }).addTo(heraldry);
+        haldrim_haldrim.bindTooltip("Haldrim");
+        haldrim_haldrim.on('click', function () {
+            var win = L.control.window(map, {
+                title: 'Haldrim',
+                content: '<img src="images/Haldrim.png"><br />'
+            }).show()
+        });
+
+        var haldrim_greykeep = L.marker(map.unproject([4859, 3605], map.getMaxZoom()), { icon: haldrimCityMarker }).addTo(cities);
+        haldrim_greykeep.bindPopup("Grey Keep");
+        haldrim_greykeep.bindTooltip("Grey Keep");
+
+        var haldrim_stolver = L.marker(map.unproject([4946, 3888], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns);
+        haldrim_stolver.bindPopup("Stolver");
+        haldrim_stolver.bindTooltip("Stolver");
+
+        var haldrim_pallem = L.marker(map.unproject([4416, 4293], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns);
+        haldrim_pallem.bindPopup("Pallem");
+        haldrim_pallem.bindTooltip("Pallem");
+
+        var haldrim_riverhold = L.marker(map.unproject([3974, 3672], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns);
+        haldrim_riverhold.bindPopup("Riverhold");
+        haldrim_riverhold.bindTooltip("Riverhold");
+
+        var haldrim_havenmoor = L.marker(map.unproject([4773, 3246], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns);
+        haldrim_havenmoor.bindPopup("Havenmoor");
+        haldrim_havenmoor.bindTooltip("Havenmoor");
+
+        var haldrim_traunch = L.marker(map.unproject([5242, 3426], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns);
+        haldrim_traunch.bindPopup("Traunch");
+        haldrim_traunch.bindTooltip("Traunch");
 
         //Create windows with content for some markers
         //This feels hacky and I don't like it. It works so far but I will probably replace it if I figure out how.
