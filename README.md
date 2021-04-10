@@ -1,7 +1,4 @@
 An interactive map of Spinelands
-# Known issues:
-* Markers don't render properly on Android
-* There seems to be a lot of missing tile erors in the console for some reason
 # To-do:
   - [X] Add window controlls
   - [ ] Create template for popouts and windows
