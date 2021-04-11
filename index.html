@@ -40,7 +40,7 @@
         map.setMaxBounds(bounds);
 
         //Create layers
-        var clean = L.tileLayer('maps/clean-bg/{z}/{x}/{y}.png', {
+        var clean = L.tileLayer('maps/clean/{z}/{x}/{y}.png', {
             noWrap: true,
             bounds: bounds
         }).addTo(map);
