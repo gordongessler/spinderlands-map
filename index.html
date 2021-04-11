@@ -35,7 +35,8 @@
         });
 
         var grayscale = L.tileLayer('maps/grayscale/{z}/{x}/{y}.png', {
-            noWrap: true
+            noWrap: true,
+            bounds: bounds
         });
 
         var territories = L.tileLayer('maps/territories/{z}/{x}/{y}.png', {
