@@ -39,10 +39,6 @@
         var bounds = new L.LatLngBounds(mapSW, mapNE);          
         map.setMaxBounds(bounds);
 
-        //Markers for debugging
-        var SWmarker = L.marker(mapSW).addTo(map);
-        var NEmarker = L.marker(mapNE).addTo(map);
-
         //Create layers
         var clean = L.tileLayer('maps/clean-bg/{z}/{x}/{y}.png', {
             noWrap: true,
