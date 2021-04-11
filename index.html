@@ -22,13 +22,32 @@
     <div id="map" style="width: 100%; height: 100%; background: #fcfcfc;"></div>
 
     <script type="text/javascript">
+
+        //Create Map
+        var map = L.map('map', {
+            minZoom: 1,
+            maxZoom: 5,
+            attributionControl: false,
+            //I'm not sure why I'm using simple CRS but the tutorials said to do it and I want to work on content so I will revisit this later
+            crs: L.CRS.Simple
+        }).setView([0, 0], 2);
+
+        //Set bounds for the map  
+        var mapSW = map.unproject([0, 8192], map.getMaxZoom()),
+            mapNE = map.unproject([8192, 0], map.getMaxZoom());
+
+        var bounds = new L.LatLngBounds(mapSW, mapNE);          
+        map.setMaxBounds(bounds);
+
         //Create layers
         var clean = L.tileLayer('maps/clean-bg/{z}/{x}/{y}.png', {
-            noWrap: true
-        });
+            noWrap: true,
+            bounds: bounds
+        }).addTo(map);
 
         var grayscale = L.tileLayer('maps/grayscale/{z}/{x}/{y}.png', {
-            noWrap: true
+            noWrap: true,
+            bounds: bounds
         });
 
         var territories = L.tileLayer('maps/territories/{z}/{x}/{y}.png', {
@@ -47,34 +66,11 @@
             noWrap: true
         });
 
-        //Create Map
-        var map = L.map('map', {
-            minZoom: 1,
-            maxZoom: 5,
-            attributionControl: false,
-            layers: [clean, grayscale],
-            //I'm not sure why I'm using simple CRS but the tutorials said to do it and I want to work on content so I will revisit this later
-            crs: L.CRS.Simple
-        }).setView([0, 0], 2);
-
-        //Set bounds for the map
-        var mapSW = [0, 8192],
-            mapNE = [8192, 0];
-
-        //Markers for debugging
-        var SWmarker = L.marker(map.unproject([0, 8192], map.getMaxZoom())).addTo(map);
-        var NEmarker = L.marker(map.unproject([8192, 0], map.getMaxZoom())).addTo(map);
-
-        map.setMaxBounds(new L.LatLngBounds(
-            map.unproject(mapSW, map.getMaxZoom()),
-            map.unproject(mapNE, map.getMaxZoom())
-        ));
-
         //Add coordinate finding marker 
         var locationFinder = L.marker([-130.25, 124.5], {
             draggable: true
         }).addTo(map);
-        locationFinder.bindPopup("Drag me to find coordinates").openPopup();
+        locationFinder.bindPopup("BUGFIX BRANCH").openPopup();
         locationFinder.on('dragend', function (e) {
             locationFinder.getPopup().setContent('LatLng: ' + locationFinder.getLatLng().toString() + '<br />'
                 + 'Pixels: ' + map.project(locationFinder.getLatLng(), map.getMaxZoom()).toString()).openOn(map);
