@@ -71,7 +71,7 @@
         var locationFinder = L.marker([-130.25, 124.5], {
             draggable: true
         }).addTo(map);
-        locationFinder.bindPopup("Drag me to find coordinates").openPopup();
+        locationFinder.bindPopup("BUGFIX BRANCH").openPopup();
         locationFinder.on('dragend', function (e) {
             locationFinder.getPopup().setContent('LatLng: ' + locationFinder.getLatLng().toString() + '<br />'
                 + 'Pixels: ' + map.project(locationFinder.getLatLng(), map.getMaxZoom()).toString()).openOn(map);
