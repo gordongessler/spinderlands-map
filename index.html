@@ -58,8 +58,8 @@
         }).setView([0, 0], 2);
 
         //Set bounds for the map
-        var mapSW = map.unproject([1, 8192], map.getMaxZoom()),
-            mapNE = map.unproject([8192, 1], map.getMaxZoom());
+        var mapSW = map.unproject([1, 8191], map.getMaxZoom()),
+            mapNE = map.unproject([8191, 1], map.getMaxZoom());
             
         map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
 
