@@ -51,26 +51,30 @@
         });
 
         var territories = L.tileLayer('maps/territories/{z}/{x}/{y}.png', {
-            noWrap: true
+            noWrap: true,
+            bounds: bounds
         });
 
         var labels = L.tileLayer('maps/labels/{z}/{x}/{y}.png', {
-            noWrap: true
+            noWrap: true,
+            bounds: bounds
         });
 
         var hex = L.tileLayer('maps/hex/{z}/{x}/{y}.png', {
-            noWrap: true
+            noWrap: true,
+            bounds: bounds
         });
 
         var wind_rose = L.tileLayer('maps/wind_rose/{z}/{x}/{y}.png', {
-            noWrap: true
+            noWrap: true,
+            bounds: bounds
         });
 
         //Add coordinate finding marker 
         var locationFinder = L.marker([-130.25, 124.5], {
             draggable: true
         }).addTo(map);
-        locationFinder.bindPopup("BUGFIX BRANCH").openPopup();
+        locationFinder.bindPopup("Drag me to find coordinates").openPopup();
         locationFinder.on('dragend', function (e) {
             locationFinder.getPopup().setContent('LatLng: ' + locationFinder.getLatLng().toString() + '<br />'
                 + 'Pixels: ' + map.project(locationFinder.getLatLng(), map.getMaxZoom()).toString()).openOn(map);
