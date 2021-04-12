@@ -3,14 +3,13 @@ An interactive map of Spinelands
   - [X] Add window controlls
   - [ ] Create template for popouts and windows
   - [ ] Drawable polylines
-  - [ ] Different maps at different zoom levels
-  - [ ] Themathic map markers
+  - [X] Themathic map markers
   - [ ] Search button (?)
   - [ ] Scale bar
-  - [ ] Hex grid overlay 
+  - [X] Hex grid overlay 
   - [ ] add licence information (and credit used tools/otherwise comply with their licenses)
   - [ ] add python script info
-  - [ ] group layer control
+  - [X] group layer control
 # Libraries/resources used
 * [Leaflet](https://leafletjs.com/)
 * [Window Control plugin for Leaflet](https://github.com/mapshakers/leaflet-control-window)
