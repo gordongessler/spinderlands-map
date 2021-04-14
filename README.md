@@ -10,7 +10,7 @@ An interactive map of Spinelands
   - [ ] add licence information (and credit used tools/otherwise comply with their licenses)
   - [ ] add python script info
   - [X] group layer control
-  - [ ] move labels over the markers (?)
+  - [X] move labels over the markers (?)
 # Libraries/resources used
 * [Leaflet](https://leafletjs.com/)
 * [Window Control plugin for Leaflet](https://github.com/mapshakers/leaflet-control-window)

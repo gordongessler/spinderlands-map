@@ -34,6 +34,13 @@
             crs: L.CRS.Simple
         }).setView([0, 0], 2);
 
+
+        //Add labels pane
+        map.createPane('labels');
+        map.getPane('labels').style.zIndex = 650;
+        map.getPane('labels').style.pointerEvents = 'none';
+
+
         //Set bounds for the map  
         var mapSW = map.unproject([0, 8192], map.getMaxZoom()),
             mapNE = map.unproject([8192, 0], map.getMaxZoom());
@@ -60,6 +67,7 @@
 
         var labels = L.tileLayer('maps/labels/{z}/{x}/{y}.png', {
             noWrap: true,
+            pane: 'labels',
             bounds: bounds
         });
 
