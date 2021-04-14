@@ -260,6 +260,26 @@
             tooltipAnchor: [20, -40]
         });
 
+        //Dreshmoor
+        var dreshmoorIcon = L.icon({
+            iconUrl: 'images/Dreshmoor.png',
+
+            iconSize: [81, 80],
+            iconAnchor: [20, 80],
+            popupAnchor: [20, -80],
+            tooltipAnchor: [20, -40]
+        });
+
+        //Tal-Onarafel
+        var talOnarafelIcon = L.icon({
+            iconUrl: 'images/TalOnarafel.png',
+
+            iconSize: [81, 170],
+            iconAnchor: [20, 170],
+            popupAnchor: [20, -170],
+            tooltipAnchor: [20, -40]
+        });
+
         //Add markers and assing popups and tooltips
         //Create marker groups
         var cities = L.layerGroup();
@@ -440,6 +460,26 @@
                 var win = L.control.window(map, {
                     title: 'Urshok',
                     content: '<img src="images/Urshok.png"><br />'
+                }).show()
+            });
+
+        //Dreshmoor        
+        var dreshmoor_dreshmoor = L.marker(map.unproject([6184, 2708], map.getMaxZoom()), { icon: dreshmoorIcon }).addTo(heraldry)
+            .bindTooltip("Dreshmoor")
+            .on('click', function () {
+                var win = L.control.window(map, {
+                    title: 'Dreshmoor',
+                    content: '<img src="images/Dreshmoor.png"><br />'
+                }).show()
+            });
+
+        //Tal-Onarafel
+        var talOnarafel_talOnarafel = L.marker(map.unproject([5724, 3456], map.getMaxZoom()), { icon: talOnarafelIcon }).addTo(heraldry)
+            .bindTooltip("Tal-Onarafel")
+            .on('click', function () {
+                var win = L.control.window(map, {
+                    title: 'Tal-Onarafel',
+                    content: '<img src="images/TalOnarafel.png"><br />'
                 }).show()
             });
 
