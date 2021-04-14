@@ -78,11 +78,11 @@
                 title: 'About this map',
                 content: 'Click on a marker to display a popup. Some popups have a button that will display additional information',
             }).show()
-        },'Information about the map');
+        }, 'Information about the map');
 
         var githubButton = L.easyButton('fa-github', function () {
             window.open("https://github.com/gordongessler/spinelands-map");
-        },'Source code on GitHub');
+        }, 'Source code on GitHub');
 
         L.easyBar([infoButton, githubButton]).addTo(map);
 
@@ -228,151 +228,151 @@
         var heraldry = L.layerGroup();
 
         //Zir        
-        var zir_zir = L.marker(map.unproject([2060, 1224], map.getMaxZoom()), { icon: zirIcon }).addTo(heraldry);
-        zir_zir.bindTooltip("Zir");
-        zir_zir.on('click', function () {
-            var win = L.control.window(map, {
-                title: 'Zir',
-                content: '<img src="images/Zir.png"><br />The Ziranthian dragonborn arrived in the desert as slaves, revolted against their opressors, and have established a advanced and erudite society. This tale of triumph is carried proudly in the in the heart of every dragonborn. Zir is protected by the Glass Dragons, knights clad in dragonglass armour, who vow to uphold the freedom and independence of the Zirantian people.They serve as guards to the city and towns, and patrol the distant borders of the desert.They guard the borders of the the Scale Valley especially well, watching closely for any hint that their Yuan- ti oppressors would return to enact their revenge.The Glass Dragons are trained in a secret monastery at the shores of Lake Memnor, high in the upper reaches of the Northern Spine.Here they commune in their dreams with their great liberator Brethezriass, the dragon who once delivered their people from slavery.Many young dragonborn travel to the town of Teghad in the hopes that they would be chosen to become Glass Dragons, and taken to the Lake Memnor.'
-            }).show()
-        });
+        var zir_zir = L.marker(map.unproject([2060, 1224], map.getMaxZoom()), { icon: zirIcon }).addTo(heraldry)
+            .bindTooltip("Zir")
+            .on('click', function () {
+                var win = L.control.window(map, {
+                    title: 'Zir',
+                    content: '<img src="images/Zir.png"><br />The Ziranthian dragonborn arrived in the desert as slaves, revolted against their opressors, and have established a advanced and erudite society. This tale of triumph is carried proudly in the in the heart of every dragonborn. Zir is protected by the Glass Dragons, knights clad in dragonglass armour, who vow to uphold the freedom and independence of the Zirantian people.They serve as guards to the city and towns, and patrol the distant borders of the desert.They guard the borders of the the Scale Valley especially well, watching closely for any hint that their Yuan- ti oppressors would return to enact their revenge.The Glass Dragons are trained in a secret monastery at the shores of Lake Memnor, high in the upper reaches of the Northern Spine.Here they commune in their dreams with their great liberator Brethezriass, the dragon who once delivered their people from slavery.Many young dragonborn travel to the town of Teghad in the hopes that they would be chosen to become Glass Dragons, and taken to the Lake Memnor.'
+                }).show()
+            });
 
-        var zir_ziris = L.marker(map.unproject([2541, 912], map.getMaxZoom()), { icon: zirCityMarker }).addTo(cities);
-        zir_ziris.bindPopup("<b>Ziris</b><br /> The capital city of Zir. Ruled by the council of seven. Home to the Clarion Archives<button id='ziris'>Read more...</a>");
-        zir_ziris.bindTooltip("Ziris");
+        var zir_ziris = L.marker(map.unproject([2541, 912], map.getMaxZoom()), { icon: zirCityMarker }).addTo(cities)
+            .bindPopup("<b>Ziris</b><br /> The capital city of Zir. Ruled by the council of seven. Home to the Clarion Archives<button id='ziris'>Read more...</a>")
+            .bindTooltip("Ziris");
 
-        var zir_kharzim = L.marker(map.unproject([1985, 566], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns);
-        zir_kharzim.bindPopup("Kharzim");
-        zir_kharzim.bindTooltip("Kharzim");
+        var zir_kharzim = L.marker(map.unproject([1985, 566], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns)
+            .bindPopup("Kharzim")
+            .bindTooltip("Kharzim");
 
-        var zir_rezma = L.marker(map.unproject([1919, 1474], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns);
-        zir_rezma.bindPopup("Rezma");
-        zir_rezma.bindTooltip("Rezma");
+        var zir_rezma = L.marker(map.unproject([1919, 1474], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns)
+            .bindPopup("Rezma")
+            .bindTooltip("Rezma");
 
-        var zir_kelrix = L.marker(map.unproject([3272, 1341], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns);
-        zir_kelrix.bindPopup("Kelrix");
-        zir_kelrix.bindTooltip("Kelrix");
+        var zir_kelrix = L.marker(map.unproject([3272, 1341], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns)
+            .bindPopup("Kelrix")
+            .bindTooltip("Kelrix");
 
-        var zir_garut = L.marker(map.unproject([2898, 456], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns);
-        zir_garut.bindPopup("Garut");
-        zir_garut.bindTooltip("Garut");
+        var zir_garut = L.marker(map.unproject([2898, 456], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns)
+            .bindPopup("Garut")
+            .bindTooltip("Garut");
 
-        var zir_teghad = L.marker(map.unproject([4188, 1123], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns);
-        zir_teghad.bindPopup("Teghad");
-        zir_teghad.bindTooltip("Teghad");
+        var zir_teghad = L.marker(map.unproject([4188, 1123], map.getMaxZoom()), { icon: zirTownMarker }).addTo(towns)
+            .bindPopup("Teghad")
+            .bindTooltip("Teghad");
 
         //Bogmire        
-        var bogmire_bogmire = L.marker(map.unproject([5556, 1808], map.getMaxZoom()), { icon: bogmireIcon }).addTo(heraldry);
-        bogmire_bogmire.bindTooltip("Bogmire");
-        bogmire_bogmire.on('click', function () {
-            var win = L.control.window(map, {
-                title: 'Bogmire',
-                content: '<img src="images/Bogmire.png"><br />'
-            }).show()
-        });
+        var bogmire_bogmire = L.marker(map.unproject([5556, 1808], map.getMaxZoom()), { icon: bogmireIcon }).addTo(heraldry)
+            .bindTooltip("Bogmire")
+            .on('click', function () {
+                var win = L.control.window(map, {
+                    title: 'Bogmire',
+                    content: '<img src="images/Bogmire.png"><br />'
+                }).show()
+            });
 
-        var bogmire_bobbernet = L.marker(map.unproject([5617, 1397], map.getMaxZoom()), { icon: bogmireCityMarker }).addTo(cities);
-        bogmire_bobbernet.bindPopup("<b>Bobbernet</b><br /> The capital city of Bogmire."); /*Ruled by the council of seven. Home to the Clarion Archives<button id='ziris'>Read more...</a>");
+        var bogmire_bobbernet = L.marker(map.unproject([5617, 1397], map.getMaxZoom()), { icon: bogmireCityMarker }).addTo(cities)
+            .bindPopup("<b>Bobbernet</b><br /> The capital city of Bogmire.") /*Ruled by the council of seven. Home to the Clarion Archives<button id='ziris'>Read more...</a>");
             */
-        bogmire_bobbernet.bindTooltip("Bobbernet");
+            .bindTooltip("Bobbernet");
 
         //Ardenia        
-        var ardenia_ardenia = L.marker(map.unproject([4672, 2324], map.getMaxZoom()), { icon: ardeniaIcon }).addTo(heraldry);
-        ardenia_ardenia.bindTooltip("Ardenia");
-        ardenia_ardenia.on('click', function () {
-            var win = L.control.window(map, {
-                title: 'Ardenia',
-                content: '<img src="images/Ardenia.png"><br />'
-            }).show()
-        });
+        var ardenia_ardenia = L.marker(map.unproject([4672, 2324], map.getMaxZoom()), { icon: ardeniaIcon }).addTo(heraldry)
+            .bindTooltip("Ardenia")
+            .on('click', function () {
+                var win = L.control.window(map, {
+                    title: 'Ardenia',
+                    content: '<img src="images/Ardenia.png"><br />'
+                }).show()
+            });
 
-        var ardenia_ardenfort = L.marker(map.unproject([4819, 1803], map.getMaxZoom()), { icon: ardeniaCityMarker }).addTo(cities);
-        ardenia_ardenfort.bindPopup("Ardenfort");
-        ardenia_ardenfort.bindTooltip("Ardenfort");
+        var ardenia_ardenfort = L.marker(map.unproject([4819, 1803], map.getMaxZoom()), { icon: ardeniaCityMarker }).addTo(cities)
+            .bindPopup("Ardenfort")
+            .bindTooltip("Ardenfort");
 
-        var ardenia_castor = L.marker(map.unproject([5177, 1723], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns);
-        ardenia_castor.bindPopup("Castor");
-        ardenia_castor.bindTooltip("Castor");
+        var ardenia_castor = L.marker(map.unproject([5177, 1723], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns)
+            .bindPopup("Castor")
+            .bindTooltip("Castor");
 
-        var ardenia_oakshadow = L.marker(map.unproject([4628, 2018], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns);
-        ardenia_oakshadow.bindPopup("Oakshadow");
-        ardenia_oakshadow.bindTooltip("Oakshadow");
+        var ardenia_oakshadow = L.marker(map.unproject([4628, 2018], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns)
+            .bindPopup("Oakshadow")
+            .bindTooltip("Oakshadow");
 
-        var ardenia_fallworth = L.marker(map.unproject([4371, 2152], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns);
-        ardenia_fallworth.bindPopup("Fallworth");
-        ardenia_fallworth.bindTooltip("Fallworth");
+        var ardenia_fallworth = L.marker(map.unproject([4371, 2152], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns)
+            .bindPopup("Fallworth")
+            .bindTooltip("Fallworth");
 
-        var ardenia_mistwater = L.marker(map.unproject([3942, 1849], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns);
-        ardenia_mistwater.bindPopup("Mistwater");
-        ardenia_mistwater.bindTooltip("Mistwater");
+        var ardenia_mistwater = L.marker(map.unproject([3942, 1849], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns)
+            .bindPopup("Mistwater")
+            .bindTooltip("Mistwater");
 
-        var ardenia_Greenrest = L.marker(map.unproject([4981, 2316], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns);
-        ardenia_Greenrest.bindPopup("Greenrest");
-        ardenia_Greenrest.bindTooltip("Greenrest");
+        var ardenia_greenrest = L.marker(map.unproject([4981, 2316], map.getMaxZoom()), { icon: ardeniaTownMarker }).addTo(towns)
+            .bindPopup("Greenrest")
+            .bindTooltip("Greenrest");
 
         //Haldrim
-        var haldrim_haldrim = L.marker(map.unproject([4397, 4009], map.getMaxZoom()), { icon: haldrimIcon }).addTo(heraldry);
-        haldrim_haldrim.bindTooltip("Haldrim");
-        haldrim_haldrim.on('click', function () {
-            var win = L.control.window(map, {
-                title: 'Haldrim',
-                content: '<img src="images/Haldrim.png"><br />'
-            }).show()
-        });
+        var haldrim_haldrim = L.marker(map.unproject([4397, 4009], map.getMaxZoom()), { icon: haldrimIcon }).addTo(heraldry)
+            .bindTooltip("Haldrim")
+            .on('click', function () {
+                var win = L.control.window(map, {
+                    title: 'Haldrim',
+                    content: '<img src="images/Haldrim.png"><br />'
+                }).show()
+            });
 
-        var haldrim_greykeep = L.marker(map.unproject([4859, 3605], map.getMaxZoom()), { icon: haldrimCityMarker }).addTo(cities);
-        haldrim_greykeep.bindPopup("Grey Keep");
-        haldrim_greykeep.bindTooltip("Grey Keep");
+        var haldrim_greykeep = L.marker(map.unproject([4859, 3605], map.getMaxZoom()), { icon: haldrimCityMarker }).addTo(cities)
+            .bindPopup("Grey Keep")
+            .bindTooltip("Grey Keep");
 
-        var haldrim_stolver = L.marker(map.unproject([4946, 3888], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns);
-        haldrim_stolver.bindPopup("Stolver");
-        haldrim_stolver.bindTooltip("Stolver");
+        var haldrim_stolver = L.marker(map.unproject([4946, 3888], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns)
+            .bindPopup("Stolver")
+            .bindTooltip("Stolver");
 
-        var haldrim_pallem = L.marker(map.unproject([4416, 4293], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns);
-        haldrim_pallem.bindPopup("Pallem");
-        haldrim_pallem.bindTooltip("Pallem");
+        var haldrim_pallem = L.marker(map.unproject([4416, 4293], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns)
+            .bindPopup("Pallem")
+            .bindTooltip("Pallem");
 
-        var haldrim_riverhold = L.marker(map.unproject([3974, 3672], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns);
-        haldrim_riverhold.bindPopup("Riverhold");
-        haldrim_riverhold.bindTooltip("Riverhold");
+        var haldrim_riverhold = L.marker(map.unproject([3974, 3672], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns)
+            .bindPopup("Riverhold")
+            .bindTooltip("Riverhold");
 
-        var haldrim_havenmoor = L.marker(map.unproject([4773, 3246], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns);
-        haldrim_havenmoor.bindPopup("Havenmoor");
-        haldrim_havenmoor.bindTooltip("Havenmoor");
+        var haldrim_havenmoor = L.marker(map.unproject([4773, 3246], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns)
+            .bindPopup("Havenmoor")
+            .bindTooltip("Havenmoor");
 
-        var haldrim_traunch = L.marker(map.unproject([5242, 3426], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns);
-        haldrim_traunch.bindPopup("Traunch");
-        haldrim_traunch.bindTooltip("Traunch");
+        var haldrim_traunch = L.marker(map.unproject([5242, 3426], map.getMaxZoom()), { icon: haldrimTownMarker }).addTo(towns)
+            .bindPopup("Traunch")
+            .bindTooltip("Traunch");
 
         //Cardus
-        var cardus_cardus = L.marker(map.unproject([3492, 3228], map.getMaxZoom()), { icon: cardusIcon }).addTo(heraldry);
-        cardus_cardus.bindTooltip("Cardus");
-        cardus_cardus.on('click', function () {
-            var win = L.control.window(map, {
-                title: 'Cardus',
-                content: '<img src="images/Cardus.png"><br />'
-            }).show()
-        });
+        var cardus_cardus = L.marker(map.unproject([3492, 3228], map.getMaxZoom()), { icon: cardusIcon }).addTo(heraldry)
+            .bindTooltip("Cardus")
+            .on('click', function () {
+                var win = L.control.window(map, {
+                    title: 'Cardus',
+                    content: '<img src="images/Cardus.png"><br />'
+                }).show()
+            });
 
-        var cardus_sparrowrest = L.marker(map.unproject([3638, 3429], map.getMaxZoom()), { icon: cardusCityMarker }).addTo(cities);
-        cardus_sparrowrest.bindPopup("Sparrowrest");
-        cardus_sparrowrest.bindTooltip("Sparrowrest");
+        var cardus_sparrowrest = L.marker(map.unproject([3638, 3429], map.getMaxZoom()), { icon: cardusCityMarker }).addTo(cities)
+            .bindPopup("Sparrowrest")
+            .bindTooltip("Sparrowrest");
 
-        var cardus_waldren = L.marker(map.unproject([3730, 3887], map.getMaxZoom()), { icon: cardusTownMarker }).addTo(towns);
-        cardus_waldren.bindPopup("Waldren");
-        cardus_waldren.bindTooltip("Waldren");
+        var cardus_waldren = L.marker(map.unproject([3730, 3887], map.getMaxZoom()), { icon: cardusTownMarker }).addTo(towns)
+            .bindPopup("Waldren")
+            .bindTooltip("Waldren");
 
-        var cardus_keys = L.marker(map.unproject([3863, 3330], map.getMaxZoom()), { icon: cardusTownMarker }).addTo(towns);
-        cardus_keys.bindPopup("Keys");
-        cardus_keys.bindTooltip("Keys");
+        var cardus_keys = L.marker(map.unproject([3863, 3330], map.getMaxZoom()), { icon: cardusTownMarker }).addTo(towns)
+            .bindPopup("Keys")
+            .bindTooltip("Keys");
 
-        var cardus_bridle = L.marker(map.unproject([3164, 3351], map.getMaxZoom()), { icon: cardusTownMarker }).addTo(towns);
-        cardus_bridle.bindPopup("Bridle");
-        cardus_bridle.bindTooltip("Bridle");
+        var cardus_bridle = L.marker(map.unproject([3164, 3351], map.getMaxZoom()), { icon: cardusTownMarker }).addTo(towns)
+            .bindPopup("Bridle")
+            .bindTooltip("Bridle");
 
-        var cardus_orton = L.marker(map.unproject([3795, 2872], map.getMaxZoom()), { icon: cardusTownMarker }).addTo(towns);
-        cardus_orton.bindPopup("Orton");
-        cardus_orton.bindTooltip("Orton");
+        var cardus_orton = L.marker(map.unproject([3795, 2872], map.getMaxZoom()), { icon: cardusTownMarker }).addTo(towns)
+            .bindPopup("Orton")
+            .bindTooltip("Orton");
 
         //Create windows with content for some markers
         //This feels hacky and I don't like it. It works so far but I will probably replace it if I figure out how.

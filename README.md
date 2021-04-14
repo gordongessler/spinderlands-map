@@ -41,6 +41,7 @@ An interactive map of Spinelands
     * https://github.com/jseppi/Leaflet.MakiMarkers
     * https://github.com/coryasilva/Leaflet.ExtraMarkers
     * https://github.com/lvoogdt/Leaflet.awesome-markers
+    * https://github.com/ptma/Leaflet.Legend
 * [RPG themed icons](https://nagoshiashumari.github.io/Rpg-Awesome/)
 ## Example maps for refernce
 * http://talesofrokugan.com/map/
